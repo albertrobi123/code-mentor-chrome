@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Buddy</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">💡</div>
+            <h1>Student Buddy</h1>
+        </div>
+        
+        <div id="not-leetcode" class="message" style="display: none;">
+            <p>Navigate to a LeetCode problem to get hints!</p>
+        </div>
+        
+        <div id="leetcode-detected" style="display: none;">
+            <div class="problem-info">
+                <h3 id="problem-title">Loading problem...</h3>
+                <span id="problem-difficulty" class="difficulty-badge">-</span>
+            </div>
+            
+            <div class="hints-section">
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Generating hint...</p>
+                </div>
+                
+                <div id="hints-container"></div>
+                
+                <button id="get-hint-btn" class="hint-btn">
+                    Get First Hint
+                </button>
+                
+                <div class="api-key-section" id="api-key-section">
+                    <p class="small-text">Enter your free Hugging Face API key:</p>
+                    <input type="password" id="api-key-input" placeholder="hf_...">
+                    <button id="save-key-btn" class="small-btn">Save</button>
+                    <p class="small-text">
+                        <a href="https://huggingface.co/settings/tokens" target="_blank">Get free API key</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="error-message" class="error" style="display: none;"></div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
